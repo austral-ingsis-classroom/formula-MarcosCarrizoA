@@ -1,4 +1,4 @@
-package edu.austral.ingsis.math;
+package edu.austral.ingsis.math.operands;
 
 public class Add implements Operand {
   @Override

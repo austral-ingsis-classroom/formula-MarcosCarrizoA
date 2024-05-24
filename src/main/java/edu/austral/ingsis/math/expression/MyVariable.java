@@ -1,12 +1,12 @@
-package edu.austral.ingsis.math;
+package edu.austral.ingsis.math.expression;
 
 import java.util.ArrayList;
 import java.util.Map;
 
-class Variable implements MyExpression {
+public class MyVariable implements MyExpression {
   private final String name;
 
-  public Variable(String name) {
+  public MyVariable(String name) {
     this.name = name;
   }
 
@@ -17,6 +17,11 @@ class Variable implements MyExpression {
 
   @Override
   public String toString() {
+    return name;
+  }
+
+  @Override
+  public String nestedToString(boolean nested) {
     return name;
   }
 

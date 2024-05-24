@@ -1,9 +1,9 @@
-package edu.austral.ingsis.math;
+package edu.austral.ingsis.math.expression;
 
 import java.util.ArrayList;
 import java.util.Map;
 
-class MyNumber implements MyExpression {
+public class MyNumber implements MyExpression {
   private final double value;
 
   public MyNumber(double value) {
@@ -17,7 +17,12 @@ class MyNumber implements MyExpression {
 
   @Override
   public String toString() {
-    return Double.toString(value);
+    return Integer.toString((int) value);
+  }
+
+  @Override
+  public String nestedToString(boolean nested) {
+    return Integer.toString((int) value);
   }
 
   @Override

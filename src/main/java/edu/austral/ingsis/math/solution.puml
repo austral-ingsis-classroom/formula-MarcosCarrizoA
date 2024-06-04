@@ -1,0 +1,54 @@
+@startuml
+
+interface MyExpression
+class MyNumber
+class MyVariable
+class Operation
+interface Operand
+interface SingleOperand
+class Sum
+class Abs
+
+MyExpression <|-- MyNumber
+MyExpression <|-- MyVariable
+MyExpression <|-- Operation
+
+MyNumber *-- MyExpression
+MyVariable *-- MyExpression
+Operation *-- MyExpression
+
+MyExpression : +evaluate() : double
+MyExpression : +toString() : string
+MyExpression : +getVariables() : MyExpression
+
+MyNumber : +evaluate() : double
+MyNumber : +toString() : string
+MyNumber : +getVariables() : MyExpression
+
+MyVariable : +evaluate() : double
+MyVariable : +toString() : string
+MyVariable : +getVariables() : MyExpression
+
+Operation : +evaluate() : double
+Operation : +toString() : string
+Operation : +getVariables() : MyExpression
+
+MyNumber : -value : double
+MyVariable : -name : string
+Operation : -left : MyExpression
+Operation : -right : MyExpression
+Operation : -operator : char
+
+Operand *-- MyExpression
+SingleOperand *-- MyExpression
+
+Operand : +getSymbol() : String
+SingleOperand : +getSymbol() : String
+Operand : +Evaluate() : double
+SingleOperand : +Evaluate() : double
+
+Operand <|-- Sum
+SingleOperand <|-- Abs
+
+
+@enduml

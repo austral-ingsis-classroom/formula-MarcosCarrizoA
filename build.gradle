@@ -5,7 +5,7 @@ plugins {
 }
 
 
-group 'edu.austral.ingsis'
+group 'edu.austral'
 version '1.0-SNAPSHOT'
 
 repositories {
